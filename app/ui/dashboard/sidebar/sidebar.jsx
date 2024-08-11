@@ -93,7 +93,7 @@ const Sidebar = () => {
           <span className={styles.userTitle}>Administrator</span>
         </div>
       </div>
-      <ul>
+      <ul className={styles.list}>
         {menuItems.map((cat) => (
           <li key={cat.title}>
             <span className={styles.cat}>{cat.title}</span>
@@ -103,6 +103,9 @@ const Sidebar = () => {
           </li>
         ))}
       </ul>
+      <button className={styles.logout}>
+        <MdLogout /> Logout
+      </button>
     </div>
   );
 };
