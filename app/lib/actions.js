@@ -5,7 +5,7 @@ import { Product, User } from './models';
 import { connectToDB } from './utils';
 import { redirect } from 'next/navigation';
 import bcrypt from 'bcrypt';
-import { signIn } from '../auth';
+import { signIn, signOut } from '../auth';
 
 export const addUser = async (formData) => {
   const { username, email, password, phone, address, isAdmin, isActive } =
@@ -162,3 +162,7 @@ export const authenticate = async (prevState, formData) => {
     throw err;
   }
 };
+
+export async function signout() {
+  await signOut();
+}
